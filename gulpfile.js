@@ -33,7 +33,10 @@ function styles() {
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(rename("styles.min.css"))
     .pipe(
-      sourcemaps.write("../maps", { includeContent: false, sourceRoot: "/src" })
+      sourcemaps.write("../maps", {
+        includeContent: false,
+        sourceRoot: "/src/sass",
+      })
     )
     .pipe(gulp.dest("assets/css"))
     .pipe(connect.reload());
